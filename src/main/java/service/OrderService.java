@@ -24,4 +24,11 @@ public class OrderService {
         return orderRepository
                 .findByProductNameContaining(productName, pageable);
     }
+public Double getTotalOrderAmount(Long userId) {
+    return orderRepository.getTotalAmountForUser(userId);
+}
+
+public Long getOrderCount(Long userId) {
+    return orderRepository.countOrdersByUser(userId);
+}
 }
